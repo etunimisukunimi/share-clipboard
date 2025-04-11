@@ -24,7 +24,7 @@ function checkAndPushText() {
   }
   // create message
   var messageLength = Buffer.byteLength(clipboardText, 'utf8') + 8;
-  var messageData = new Buffer(messageLength);
+  var messageData = Buffer.alloc(messageLength);
   // message length
   messageData.writeInt32BE(messageLength, 0);
   // clipboard type
